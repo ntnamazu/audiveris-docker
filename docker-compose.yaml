@@ -1,0 +1,12 @@
+services:
+  audiveris:
+    build: .
+    volumes:
+      - type: bind
+        source: ./input
+        target: /input
+      - type: bind
+        source: ./output
+        target: /output
+    user: ${UID}:${GID}
+    command: /transform.sh
